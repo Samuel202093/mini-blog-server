@@ -63,7 +63,7 @@ exports.createComment = async(req, res)=>{
 
 exports.Comment = async(req, res)=>{
     try {
-        const result = await Comment.findOne({postTitle: req.params.title}).populate("userId")
+        const result = await Comment.findOne({postTitle: req.params.title})
         if (result) {
             res.status(200).send(result)
         }
